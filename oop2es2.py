@@ -15,18 +15,17 @@ class Auto(Veicolo):
         return f"Auto - Marca: {self.marca}, Modello: {self.modello}, Numero di porte: {self.numero_porte}"
 
 class AutoElettrica(Auto):
-    def __init__(self, marca, modello, autonomia):
-        super().__init__(marca, modello)
+    def __init__(self, marca, modello, numero_porte, autonomia):
+        super().__init__(marca, modello, numero_porte)
         self.autonomia_km = autonomia
     
     def scheda(self):
-        return f"Moto - Marca: {self.marca}, Modello: {self.modello}, Cilindrata: {self.autonomia_km} "
-    
+        return f"Auto Elettrica - Marca: {self.marca}, Modello: {self.modello}, Numero di porte: {self.numero_porte}, Autonomia: {self.autonomia_km} km"
 
-    
+# Oggetti
 auto1 = Auto("Fiat", "Panda", 5)
-moto1 = AutoElettrica("Yamaha", "MT-07", 100)
+auto_elettrica1 = AutoElettrica("Tesla", "Model 3", 4, 450)
 
-
+# Output
 print(auto1.scheda())  
-print(moto1.scheda())
+print(auto_elettrica1.scheda())
